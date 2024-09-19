@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipos de Fútbol</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            position: relative;
+        }
+        h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        p {
+            color: #555;
+            margin: 5px 0;
+        }
+        .buttons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .buttons a {
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            color: white;
+            background-color: #007bff;
+            transition: background-color 0.3s ease;
+        }
+        .buttons a:hover {
+            background-color: #0056b3;
+        }
+        .buttons a.delete {
+            background-color: #dc3545;
+        }
+        .buttons a.delete:hover {
+            background-color: #c82333;
+        }
+        .add-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 30px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+        .add-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <% if (rows.length > 0) { %>
+        <% for (let i=0; i<rows.length; i++) { %>
+        <div class="card">
+            <h3><%= rows[i].nombre %></h3>
+            <p><strong>Ciudad:</strong> <%=rows[i].ciudad %></p>
+            <p><strong>País:</strong><%= rows[i].pais %> </p>
+            <p><strong>Estadio:</strong> <%=rows[i].estadio %> </p>
+            <p><strong>Año de Fundación:</strong> <%=rows[i].anio %> </p>
+            <div class="buttons">
+                <a href="/editar/<%=rows[i].id%>" class="edit">Editar</a>
+                <a href="/eliminar/<%=rows[i].id%>" class="delete">Eliminar</a>
+            </div>
+        </div>
+        <% } %>
+    <% } else { %>
+        <h1> No hay datos </h1>
+    <% } %>
+
+    <a href="/agregar" class="add-button">Agregar Equipo</a>
+
+</body>
+</html>
