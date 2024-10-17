@@ -6,7 +6,7 @@ Retomar los conocimientos previamente adquiridos y realizar las operaciones bás
 #Organización  
 -controllers. Tiene la logica de las operaciones, desde mostrar el inicio y hacer las consultas respectivas    
 -routes. Coontiene las rutas cuando se redirecciona, y se hace uso de las funciones de controllers, de acuerdo a cada ruta  
--util. Contiene el archivo para poder manejar y eliminar las imagenes cuando se actualiza por una nueva, o se elimine el registro de la base, eliminar tambien la imagen de la carpeta.
+-util. Contiene el archivo para poder manejar y eliminar las imagenes cuando se actualiza por una nueva, o se elimine el registro de la base, eliminar tambien la imagen de la carpeta.  
 -views. Contiene los archivos que se desplegan, haciendo uso de EJS como motor de plantilla  
 -images: Contiene las imagenes que se suben desde el formulario  
 -models: Modelo para el uso de mongoDB.
